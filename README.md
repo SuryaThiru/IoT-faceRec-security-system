@@ -7,5 +7,11 @@
 4. Run the server.py on the mediator -- a local server
 5. Run the tele_receive.py on the mediator
 
-To use the docker container for raspberry pi 3, use the docker file
-(https://hub.docker.com/r/mohaseeb/raspberrypi3-python-opencv/)
+To use the docker container for raspberry pi 3, use the docker image
+```
+docker run -it --rm --network host \
+    -v `pwd`:/`pwd` \
+    <docker image name/id> \
+    bash
+```
+and run the scripts in the container

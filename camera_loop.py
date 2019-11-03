@@ -18,14 +18,17 @@ def send_image_to_server(im):
     return response.json()
 
 def camera_loop(prev):
-    cam = cv2.VideoCapture("http://192.168.43.58:8080/video")
+    # cam = cv2.VideoCapture("https://192.168.43.1203:8080/videofeed")
+    cam = cv2.VideoCapture("rtsp://192.168.43.203:8080/h264_ulaw.sdp")
     ret, im = cam.read()
+    print(im.shape) 
 
     # send image to server to run face recognition if unknown face,
     res = send_image_to_server(im)
     notify_bot = False if res['code'] == 404 else True
     
     if notify_bot and prev != res['face']:
+        print(res['face'])
         # send image to the bot
         caption = res['face'] + ' is here!' if res['code'] == 200 else 'Unknown visitor is here'
         send_image_to_bot(im, caption)
