@@ -1,2 +1,3 @@
 teleenv
-
+__pycache__
+.vscode
