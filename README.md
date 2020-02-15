@@ -15,3 +15,9 @@ docker run -it --rm --network host \
     bash
 ```
 and run the scripts in the container
+
+![architecture](arch.png)
+
+## Screenshot
+
+![architecture](tele.png)
