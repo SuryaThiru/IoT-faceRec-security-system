@@ -21,3 +21,5 @@ and run the scripts in the container
 ## Screenshot
 
 ![architecture](tele.png)
+
+Refer the report for more information
